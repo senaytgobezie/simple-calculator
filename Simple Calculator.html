@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<style id="webmakerstyle">
+
+body {background-color:  powderblue;}
+h1   {color: blue;}
+#addBtn {
+   font-size: 2rem;
+   background-color: blueviolet;
+  color: #fff;}
+#subBtn {
+  font-size: 2rem;
+   background-color: rgb(228, 30, 152);
+  color: #fff;}
+ #mulBtn {
+  font-size: 2rem;
+   background-color: rgb(43, 168, 226);
+  color: #fff;}
+ #divBtn {
+  font-size: 2rem;
+   background-color: rgb(35, 235, 62);
+  color: #fff;}
+  #resultt{
+    border:1px solid blue;
+    border-radius: 1.2em;
+    border-style:dotted;
+     box-sizing: border-box; 
+     margin-right: 300px;
+     padding-left: 100px;
+     color: blue;}
+     #bodyy{
+       align-items: center;
+     justify-content: center;
+     margin-left: 300px;
+     margin-right: 450px;
+     border: 2px solid blue;
+     padding: 10px;
+     }
+     #firstNumber{
+  font-size: 2rem;
+  margin: 10px;
+     }
+     #secondNumber {
+      font-size: 2rem;
+      margin: 10px;
+     }
+
+</style>
+</head>
+<body>
+  <section id="bodyy">
+<h1>Simple Calculator</h1>
+<input type="number" id="firstNumber" value="0" >
+<br>
+<input type="number" id="secondNumber"  value="0" >
+<div style="margin: 25px;">
+<button id="addBtn">+</button> 
+<button id="subBtn">-</button>
+<button id="mulBtn">x</button>
+<button id="divBtn"> ÷ </button>
+</div>
+<div id="resultt">
+<h3>Result</h3>
+<h1 id="result">0</h1>
+</div>
+</section>
+<script>
+// query selector
+const addBtn = document.querySelector('#addBtn');
+const subBtn = document.querySelector('#subBtn');
+const mulBtn = document.querySelector('#mulBtn');
+const divBtn = document.querySelector('#divBtn');
+
+const firstNum = document.querySelector('#firstNumber')
+const secondNum = document.querySelector('#secondNumber')
+
+const htmlResult = document.querySelector('#result');
+
+let result = 0;
+
+addBtn.addEventListener('click', add)
+
+subBtn.addEventListener('click', sub)
+mulBtn.addEventListener('click', mul)
+divBtn.addEventListener('click', div)
+
+function add() {
+  result = Number(firstNum.value) + Number(secondNum.value);
+  htmlResult.innerHTML = result; 
+}
+
+function sub() {
+  result = Number(firstNum.value) - Number(secondNum.value);
+  htmlResult.innerHTML = result;  
+}
+function mul() {
+  result = Number(firstNum.value) *  Number(secondNum.value);
+  htmlResult.innerHTML = result;  
+}
+function div() {
+  if(Number(secondNum) == 0){
+ result="undefined";
+ htmlResult.innerHTML = result;
+  }
+  else{
+  result = Number(firstNum.value) / Number(secondNum.value);
+  htmlResult.innerHTML = result;  }
+}
+// when add button is clicked x
+  // get first number value
+  // get second number value
+  // add,sub,mul or divide the two numbers
+  //display on result
+
+
+//# sourceURL=userscript.js
+</script>
+</body>
+</html>
